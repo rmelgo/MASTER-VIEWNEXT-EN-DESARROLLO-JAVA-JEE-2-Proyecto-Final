@@ -112,4 +112,12 @@ GET -> http://localhost:8080/alumnos/<dni del alumno\>/alumnos
 
 GET -> http://localhost:8080/alumnos/<dni del alumno\>/<nombre de la asignatura\>
 
+- **Matricular alumno en una asignatura**: Se matricula al alumno cuyo dni se pasa como parámetro en la asignatura cuyo nombre se pasa como parámetro.
+
+POST -> http://localhost:8080/alumnos/<dni del alumno\>/<nombre de la asignatura\>
+
+- **Desmatricular alumno en una asignatura**: Se desmatricula al alumno cuyo dni se pasa como parámetro en la asignatura cuyo nombre se pasa como parámetro.
+
+DELETE -> http://localhost:8080/alumnos/<dni del alumno\>/<nombre de la asignatura\>
+
 
