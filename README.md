@@ -25,7 +25,7 @@ El microservicio Alumno cuenta con una entidad principal llamada Alumno con los 
 
 Tambien cuenta con una entidad secuandaria llamada AlumnoAsignatura que permite relacionar los alumnos matriculados en cada una de las asignaturas. Cuenta con los siguientes campos:
 
-- DNI del alumnp
+- DNI del alumno
 - Id de la asignatura
 
 ### Microservicio Asignatura
@@ -164,3 +164,34 @@ GET -> http://localhost:7070/asignaturas/<nombre de la asignatura\>/id
 - **Obtener número de temas de una asignatura**: Se obtiene únicamente el número de temas de la asignatura cuyo nombre se pasará como parámetro.
 
 GET -> http://localhost:7070/asignaturas/<nombre de la asignatura\>/temas
+
+### Microservicio Asignatura
+
+Se ejecuta en el puerto 6060. Los recursos de este microservicio son los siguientes:
+
+- **Añadir nota**: Se añade la nota cuyos datos se pasan en el cuerpo de la petición.
+
+POST -> http://localhost:7070/notas
+
+{
+    "dni_alumno": "70925689Z",
+    "id_asignatura": 11,
+    "temas": "1-2",
+    "nota": 10
+}
+
+- **Modificar valor nota**: Se modifica el valor numérico de la nota recibiendo como parámetros el dni del alumno al que pertenezca la nota, la asignatura y los temas.
+
+PUT -> http://localhost:6060/alumnos/notas?dni_alumno=x&id_asignatura=x&temas=x-x&nota=x
+
+- **Eliminar nota alumno**: Se elimina la nota del alumno cuyo dni se recibe como parámetro. También se recibe como parámetro la asignatura y los temas.
+
+DELETE -> http://localhost:6060/alumnos/notas?dni_alumno=x&id_asignatura=x&temas=x-x
+
+- **Obtener notas de un alumno**: Se obtiene el listado de notas de una alumno cuyo dni se recibirá como parámetro. El listado incluye el nombre de la asignatura, los temas y el valor numero de la nota.
+
+GET -> http://localhost:6060/alumnos/notas/<dni del alumno\>
+
+- **Obtener notas de un alumno en una asignatura**: Se obtiene el listado de notas de un alumno cuyo dni se recibirá como parámetro en la asignatura cuyo id de la asignatura también se pasará como parámetro. El listado incluye los temas y el valor numero de la nota.
+
+GET -> http://localhost:6060/alumnos/notas/<dni del alumno\>/<id de la asignatura\>
