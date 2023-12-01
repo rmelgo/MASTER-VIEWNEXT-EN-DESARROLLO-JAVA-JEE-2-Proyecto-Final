@@ -75,9 +75,11 @@ Se puede hacer uso de herramientas como Postman para interactuar con la API. A c
 
 ### Microservicio Alumno
 
+Se ejecuta en el puerto 8080. Los recursos de este microservicio son los siguientes:
+
 - **Añadir alumno**: Se añade el alumno cuyos datos se pasan en el cuerpo de la petición.
 
-POST http://localhost:8080/alumnos
+POST -> http://localhost:8080/alumnos
 
 {
 	"dni": "123456789M",
@@ -120,4 +122,45 @@ POST -> http://localhost:8080/alumnos/<dni del alumno\>/<nombre de la asignatura
 
 DELETE -> http://localhost:8080/alumnos/<dni del alumno\>/<nombre de la asignatura\>
 
+### Microservicio Asignatura
 
+Se ejecuta en el puerto 7070. Los recursos de este microservicio son los siguientes:
+
+- **Añadir asignatura**: Se añade la asignatura cuyos datos se pasan en el cuerpo de la petición.
+
+POST -> http://localhost:7070/asignaturas
+
+{
+    "idAsignatura": 11,
+    "nombre": "Aplaudir",
+    "numTemas": "6",
+    "numAlumnosMatriculados": 12
+}
+
+- **Eliminar asignatura**: Se elimina la asignatura con el id de la asignatura pasado como parámetro.
+
+DELETE -> http://localhost:7070/asignaturas/<id de la asignatura a eliminar\>
+
+- **Obtener numero de alumnos matriculados en una asignatura:** Se obtiene el número de alumnos matriculados en una asignatura, donde se recibe como parámetro el id de la asignatura.
+
+GET -> http://localhost:7070/asignaturas/<id de la asignatura\>
+
+- **Ver listado de asignaturas**: Se obtiene una lista de todas las asignaturas.
+
+GET -> http://localhost:7070/asignaturas
+
+- **Modificar alumnos matriculados en una asignatura**: Se actualiza el número de alumnos matriculados en una determinada asignatura. Como parámetro se recibe el id de la asignatura y el tipo de operación (incremento (+) o decremento (-)).
+
+PUT -> http://localhost:7070/asignaturas/<id de la asignatura\>/<tipo de operacion\>
+
+- **Obtener nombre de asignatura**: Se obtiene únicamente el nombre de la asignatura cuyo id se pasará como parámetro.
+
+GET -> http://localhost:7070/asignaturas/<id de la asignatura\>
+
+- **Obtener id  de asignatura**: Se obtiene únicamente el id de la asignatura cuyo nombre se pasará como parámetro.
+
+GET -> http://localhost:7070/asignaturas/<nombre de la asignatura\>/id
+
+- **Obtener número de temas de una asignatura**: Se obtiene únicamente el número de temas de la asignatura cuyo nombre se pasará como parámetro.
+
+GET -> http://localhost:7070/asignaturas/<nombre de la asignatura\>/temas
