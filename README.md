@@ -69,6 +69,13 @@ Asegurate de tener Java y Maven en tu sistema antes de ejecutar el proyecto.
 
   ```mvn spring-boot:run```
 
+
+## Estrucutura
+
+La estructura de miscroservicios se puede observar en la siguiente imagen:
+
+![Diagrama Master Viewnext drawio](https://github.com/rmelgo/MASTER-VIEWNEXT-EN-DESARROLLO-JAVA-JEE-2-Proyecto-Final/assets/145989723/60cecfe9-e9ee-4b43-96f6-63c033b42985)
+
 ## Uso de la API
 
 Se puede hacer uso de herramientas como Postman para interactuar con la API. A continuacion se describiran los disintos recursos y su utilización.
